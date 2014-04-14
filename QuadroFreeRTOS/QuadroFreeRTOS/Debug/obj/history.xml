@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc 3.4.3 mlx16 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -D__FPU_USED -I..\..\..\workspace\QuadroFreeRTOS\LCD_Lib -I..\..\..\workspace\QuadroFreeRTOS -I..\..\..\workspace\QuadroFreeRTOS\cmsis_lib -I..\..\..\workspace\QuadroFreeRTOS\cmsis -I..\..\..\workspace\QuadroFreeRTOS\cmsis_boot -I..\..\..\workspace\QuadroFreeRTOS\CompFilter -I..\..\..\workspace\QuadroFreeRTOS\MPU6050_Lib -I..\..\..\workspace\QuadroFreeRTOS\nRF24l01 -I..\..\..\workspace -I..\..\..\workspace\QuadroFreeRTOS\FreeRTOS -I..\..\..\workspace\QuadroFreeRTOS\PWM_lib -I..\..\..\workspace\QuadroFreeRTOS\cmsis_lib\include -I..\..\.. -I..\..\..\workspace\QuadroFreeRTOS\FreeRTOS\include">
+      <target file="stm32f4xx_gpio.o" lastModified="1454b646999">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="14548658fcd"/>
+      </target>
+      <target file="nRF24L01P.o" lastModified="1454fde1648">
+         <source file="..\..\..\nRF24l01\nRF24L01P.c" lastModified="1454fddc7dc"/>
+      </target>
+      <target file="tasks.o" lastModified="1454b6468d2">
+         <source file="..\..\..\FreeRTOS\tasks.c" lastModified="145488289f6"/>
+      </target>
+      <target file="event_groups.o" lastModified="1454b647007">
+         <source file="..\..\..\FreeRTOS\event_groups.c" lastModified="1444534e594"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="1454b6463d9">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="14548657dad"/>
+      </target>
+      <target file="croutine.o" lastModified="1454b646d7c">
+         <source file="..\..\..\FreeRTOS\croutine.c" lastModified="1444534e594"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="1454b647305">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="1454865bc58"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="1454b646b05">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="14548657dc7"/>
+      </target>
+      <target file="CompFilter.o" lastModified="1454fe586d4">
+         <source file="..\..\..\CompFilter\CompFilter.c" lastModified="1454fe09f57"/>
+      </target>
+      <target file="pwm.o" lastModified="1455586eeb8">
+         <source file="..\..\..\PWM_lib\pwm.c" lastModified="145558698c1"/>
+      </target>
+      <target file="stm32f4xx_spi.o" lastModified="1454b646f25">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_spi.c" lastModified="14548659f18"/>
+      </target>
+      <target file="queue.o" lastModified="1454b646cc1">
+         <source file="..\..\..\FreeRTOS\queue.c" lastModified="14449b3bf28"/>
+      </target>
+      <target file="heap_4.o" lastModified="1454b6461b7">
+         <source file="..\..\..\FreeRTOS\heap_4.c" lastModified="1444534ee40"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="1454b6466b7">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="14548657d9b"/>
+      </target>
+      <target file="list.o" lastModified="1454b646a5a">
+         <source file="..\..\..\FreeRTOS\list.c" lastModified="1444534e5d2"/>
+      </target>
+      <target file="port.o" lastModified="1454b646bba">
+         <source file="..\..\..\FreeRTOS\port.c" lastModified="1444534ea28"/>
+      </target>
+      <target file="timers.o" lastModified="1454b6467a5">
+         <source file="..\..\..\FreeRTOS\timers.c" lastModified="14449969ad9"/>
+      </target>
+      <target file="MPU6050.o" lastModified="1455045ad27">
+         <source file="..\..\..\MPU6050_Lib\MPU6050.c" lastModified="145503e44aa"/>
+      </target>
+      <target file="stm32f4xx_i2c.o" lastModified="1454b6470e3">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_i2c.c" lastModified="1454865a865"/>
+      </target>
+      <target file="main.o" lastModified="1455586f008">
+         <source file="..\..\..\main.c" lastModified="1455586e942"/>
+      </target>
+      <target file="lcd.o" lastModified="1454fde1a8d">
+         <source file="..\..\..\LCD_Lib\lcd.c" lastModified="1454c1c96b6"/>
+      </target>
+   </processor>
+</history>

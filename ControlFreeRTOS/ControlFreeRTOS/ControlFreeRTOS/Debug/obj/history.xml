@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -D__FPU_USED -I..\..\..\..\..\Users\medok\Desktop\Ported\ControlFreeRTOS\ControlFreeRTOS\CompFilter -I..\..\..\..\..\Users\medok\Desktop\Ported\ControlFreeRTOS -I..\..\..\..\..\Users\medok\Desktop\Ported\ControlFreeRTOS\ControlFreeRTOS\cmsis -I..\..\..\..\..\Users\medok\Desktop\Ported\ControlFreeRTOS\ControlFreeRTOS\MPU6050_Lib -I..\..\..\..\..\Users\medok\Desktop\Ported\ControlFreeRTOS\ControlFreeRTOS\cmsis_boot -I..\..\..\..\..\Users\medok\Desktop\Ported\ControlFreeRTOS\ControlFreeRTOS\cmsis_lib\include -I..\..\..\..\..\Users\medok\Desktop\Ported\ControlFreeRTOS\ControlFreeRTOS -I..\..\..\..\..\Users\medok\Desktop\Ported\ControlFreeRTOS\ControlFreeRTOS\FreeRTOS\include -I..\..\..\..\..\Users\medok\Desktop\Ported\ControlFreeRTOS\ControlFreeRTOS\Keyb_lib -I..\..\..\..\..\Users\medok\Desktop\Ported\ControlFreeRTOS\ControlFreeRTOS\cmsis_lib -I..\..\..\..\..\Users\medok\Desktop\Ported\ControlFreeRTOS\ControlFreeRTOS\nRF24l01 -I..\..\..\..\..\Users\medok\Desktop\Ported -I..\..\..\..\..\Users\medok\Desktop\Ported\ControlFreeRTOS\ControlFreeRTOS\FreeRTOS -I..\..\..\..\..\Users\medok\Desktop\Ported\ControlFreeRTOS\ControlFreeRTOS\LCD_Lib">
+      <target file="stm32f4xx_gpio.o" lastModified="1454b758571">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="1454b3ab82f"/>
+      </target>
+      <target file="nRF24L01P.o" lastModified="1454b7581b9">
+         <source file="..\..\..\nRF24l01\nRF24L01P.c" lastModified="14529948493"/>
+      </target>
+      <target file="tasks.o" lastModified="1454b75845f">
+         <source file="..\..\..\FreeRTOS\tasks.c" lastModified="145488289f6"/>
+      </target>
+      <target file="event_groups.o" lastModified="1454b75897d">
+         <source file="..\..\..\FreeRTOS\event_groups.c" lastModified="1444534e594"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="1454b758139">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="1454b3aa9ec"/>
+      </target>
+      <target file="KeyBoard_lib.o" lastModified="1454b7584e4">
+         <source file="..\..\..\Keyb_lib\KeyBoard_lib.c" lastModified="14529a57ae2"/>
+      </target>
+      <target file="croutine.o" lastModified="1454b7587c5">
+         <source file="..\..\..\FreeRTOS\croutine.c" lastModified="1444534e594"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="1454b758c22">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="1454b3ae4a7"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="1454b75863a">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="1454b3aaa92"/>
+      </target>
+      <target file="CompFilter.o" lastModified="1454b7580ea">
+         <source file="..\..\..\CompFilter\CompFilter.c" lastModified="14548f199f6"/>
+      </target>
+      <target file="stm32f4xx_spi.o" lastModified="1454b7588fe">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_spi.c" lastModified="1454b3acd28"/>
+      </target>
+      <target file="queue.o" lastModified="1454b75875f">
+         <source file="..\..\..\FreeRTOS\queue.c" lastModified="14449b3bf28"/>
+      </target>
+      <target file="heap_4.o" lastModified="1454b75802c">
+         <source file="..\..\..\FreeRTOS\heap_4.c" lastModified="1444534ee40"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="1454b7582eb">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="1454b3aa9d6"/>
+      </target>
+      <target file="list.o" lastModified="1454b7585d5">
+         <source file="..\..\..\FreeRTOS\list.c" lastModified="1444534e5d2"/>
+      </target>
+      <target file="port.o" lastModified="1454b758699">
+         <source file="..\..\..\FreeRTOS\port.c" lastModified="1444534ea28"/>
+      </target>
+      <target file="timers.o" lastModified="1454b758374">
+         <source file="..\..\..\FreeRTOS\timers.c" lastModified="14449969ad9"/>
+      </target>
+      <target file="stm32f4xx_i2c.o" lastModified="1454b758a33">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_i2c.c" lastModified="1454b3ad9a0"/>
+      </target>
+      <target file="MPU6050.o" lastModified="1454b758add">
+         <source file="..\..\..\MPU6050_Lib\MPU6050.c" lastModified="14540b9b411"/>
+      </target>
+      <target file="main.o" lastModified="1454b88f129">
+         <source file="..\..\..\main.c" lastModified="1454b88ed16"/>
+      </target>
+      <target file="lcd.o" lastModified="1454b7f1d24">
+         <source file="..\..\..\LCD_Lib\lcd.c" lastModified="14548fbb4f8"/>
+      </target>
+   </processor>
+</history>

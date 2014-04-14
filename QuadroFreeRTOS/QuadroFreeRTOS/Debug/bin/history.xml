@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wall -g -nostartfiles -Map=QuadroFreeRTOS.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\QuadroFreeRTOS -TC:\CooCox\CoIDE\configuration\ProgramData\QuadroFreeRTOS/arm-gcc-link.ld -g -L..\..\.. -lm">
+      <target file="QuadroFreeRTOS.elf" lastModified="1455586f281">
+         <source file="..\..\..\libm.a" lastModified="142b9c2aec8"/>
+         <source file="..\obj\heap_4.o" lastModified="1454b6461b7"/>
+         <source file="..\obj\pwm.o" lastModified="1455586eeb8"/>
+         <source file="..\obj\CompFilter.o" lastModified="1454fe586d4"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="1454b6463d9"/>
+         <source file="..\obj\nRF24L01P.o" lastModified="1454fde1648"/>
+         <source file="..\obj\main.o" lastModified="1455586f008"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="1454b6466b7"/>
+         <source file="..\obj\timers.o" lastModified="1454b6467a5"/>
+         <source file="..\obj\tasks.o" lastModified="1454b6468d2"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="1454b646999"/>
+         <source file="..\obj\list.o" lastModified="1454b646a5a"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="1454b646b05"/>
+         <source file="..\obj\port.o" lastModified="1454b646bba"/>
+         <source file="..\obj\queue.o" lastModified="1454b646cc1"/>
+         <source file="..\obj\croutine.o" lastModified="1454b646d7c"/>
+         <source file="..\obj\lcd.o" lastModified="1454fde1a8d"/>
+         <source file="..\obj\stm32f4xx_spi.o" lastModified="1454b646f25"/>
+         <source file="..\obj\event_groups.o" lastModified="1454b647007"/>
+         <source file="..\obj\stm32f4xx_i2c.o" lastModified="1454b6470e3"/>
+         <source file="..\obj\MPU6050.o" lastModified="1455045ad27"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="1454b647305"/>
+      </target>
+   </processor>
+</history>

@@ -1,1 +1,1 @@
-void Delay_ms(uint16_t milisec);
+void Delay_10_ms(uint16_t milisec);

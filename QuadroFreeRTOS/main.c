@@ -18,6 +18,13 @@
 #include <stdbool.h>
 #include "main.h"
 
+/*********************************************************************************/
+/*------------------------------ REGULATOR-GLOBAL-VARIABLES----------------------*/
+/*********************************************************************************/
+volatile bool		isStabilizedRotor_1 = false;
+volatile bool		isStabilizedRotor_2 = false;
+volatile bool		isStabilizedRotor_3 = false;
+volatile bool		isStabilizedRotor_4 = false;
 
 /*********************************************************************************/
 /*---------------------------------- MEMS-SENSOR-VARIABLES-----------------------*/
@@ -62,22 +69,25 @@ volatile char received_byte;
 /*********************************************************************************/
 /*----------------------------------PWM-VARIABLES--------------------------------*/
 /*********************************************************************************/
-volatile bool 		pwm_1_incremented = false;
-volatile bool 		pwm_2_incremented = false;
-volatile bool 		pwm_3_incremented = false;
-volatile bool 		pwm_4_incremented = false;
+volatile bool 		pwm_1_incremented   = false;
+volatile bool 		pwm_2_incremented   = false;
+volatile bool 		pwm_3_incremented   = false;
+volatile bool 		pwm_4_incremented   = false;
+volatile bool		pwm_all_incremented = false;
 
-volatile bool 		pwm_1_decremented = false;
-volatile bool 		pwm_2_decremented = false;
-volatile bool 		pwm_3_decremented = false;
-volatile bool 		pwm_4_decremented = false;
+volatile bool 		pwm_1_decremented   = false;
+volatile bool 		pwm_2_decremented   = false;
+volatile bool 		pwm_3_decremented   = false;
+volatile bool 		pwm_4_decremented   = false;
+volatile bool		pwm_all_decremented = false;
 
 volatile uint16_t 	pwm_1_pulse = 1250;
 volatile uint16_t 	pwm_2_pulse = 1250;
-volatile uint16_t 	pwm_3_pulse = 1200;
+volatile uint16_t 	pwm_3_pulse = 1250;
 volatile uint16_t 	pwm_4_pulse = 1250;
 
 #define	START_PULSE_VALUE	1400
+#define STEP_SIZE_MCS		10
 
 /*********************************************************************************/
 /*--------------------------------------FUNCTIONS--------------------------------*/
@@ -95,19 +105,131 @@ void Delay_10_ms(uint16_t milisec)
 /*----------------------------------------TASKS----------------------------------*/
 /*********************************************************************************/
 void vTaskLED1(void *pvParameters) {
-    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
-
-    GPIO_InitTypeDef gpioStructure;
-    gpioStructure.GPIO_Pin = GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
-    gpioStructure.GPIO_Mode = GPIO_Mode_OUT;
-    gpioStructure.GPIO_Speed = GPIO_Speed_50MHz;
-
-    GPIO_Init(GPIOD, &gpioStructure);
 	for (;;) {
 		GPIO_SetBits(GPIOD, GPIO_Pin_15);
 		Delay_10_ms(10);
 		GPIO_ResetBits(GPIOD, GPIO_Pin_15);
 		Delay_10_ms(10);
+	}
+}
+
+void vTaskReg (void *pvParameters) {
+/*
+ ***************************************************
+ *                  /\							   *
+ * 				    || Cx < 0					   *
+ *												   *
+ * 			             (2)					   *
+ * 			             ||						   *
+ *		                 ||						   *
+ * 	           /\ _______||_______	    /\		   *
+ * (3)  Cy > 0 || ------- -------- (1)  || Cy > 0  *
+ * 	                     ||						   *
+ * 		                 ||						   *
+ * 			             ||						   *
+ * 			            (4)						   *
+ *												   *
+ *                /\							   *
+ * 				  || Cx > 0						   *
+ ***************************************************
+ */
+	for (;;) {
+
+		if ((Cx < 0) && (Cy > 0)) {
+			pwm_4_pulse += 10;
+			do {
+				/* Stabilisation */
+			} while (Cx == 0);
+			pwm_4_pulse -= 10;
+
+			pwm_3_pulse += 10;
+			do {
+				/* Stabilisation */
+			} while (Cy == 0);
+			pwm_3_pulse -= 10;
+		}
+
+		else if ((Cx < 0) && (Cy < 0)) {
+			pwm_4_pulse += 10;
+			do {
+				/* Stabilisation */
+			} while (Cx == 0);
+			pwm_4_pulse -= 10;
+
+			pwm_1_pulse += 10;
+			do {
+					/* Stabilisation */
+			} while (Cy == 0);
+			pwm_1_pulse -= 10;
+		}
+
+		else if ((Cx > 0) && (Cy < 0)) {
+			pwm_2_pulse += 10;
+			do {
+				/* Stabilisation */
+			} while (Cx == 0);
+			pwm_2_pulse -= 10;
+
+			pwm_1_pulse += 10;
+			do {
+					/* Stabilisation */
+			} while (Cy == 0);
+			pwm_1_pulse -= 10;
+		}
+
+		else if ((Cx > 0) && (Cy > 0)) {
+			pwm_2_pulse += 10;
+			do {
+				/* Stabilisation */
+			} while (Cx == 0);
+			pwm_2_pulse -= 10;
+
+			pwm_3_pulse += 10;
+			do {
+					/* Stabilisation */
+			} while (Cy == 0);
+			pwm_3_pulse -= 10;
+		}
+
+		else if (Cy < 0) {
+			pwm_1_pulse += 10;
+			do {
+				/* Stabilisation */
+			} while (Cy == 0);
+			pwm_1_pulse -= 10;
+		}
+
+		else if (Cy > 0) {
+			pwm_3_pulse += 10;
+			do {
+				/* Stabilisation */
+			} while (Cy == 0);
+			pwm_3_pulse -= 10;
+		}
+
+		else if (Cy == 0) {
+			//break;
+		}
+
+		else if (Cx < 0) {
+			pwm_4_pulse += 10;
+			do {
+				/* Stabilisation */
+			} while (Cx == 0);
+			pwm_4_pulse -= 10;
+		}
+
+		else if (Cx > 0) {
+			pwm_2_pulse += 10;
+			do {
+				/* Stabilisation */
+			} while (Cx == 0);
+			pwm_2_pulse -= 10;
+		}
+
+		else if (Cx == 0) {
+			//break;
+		}
 	}
 }
 
@@ -147,44 +269,66 @@ void vTaskPWM(void *pvParameters) {
 	InitializePWMChannel_4(pwm_4_pulse);
 	for (;;) {
 		if (pwm_1_incremented) {
-			pwm_1_pulse += 10;
+			pwm_1_pulse += STEP_SIZE_MCS;
 			InitializePWMChannel_1(pwm_1_pulse);
 			pwm_1_incremented = false;
 		}
-		/* else */ if (pwm_2_incremented) {
-			pwm_2_pulse += 10;
+		else if (pwm_2_incremented) {
+			pwm_2_pulse += STEP_SIZE_MCS;
 			InitializePWMChannel_2(pwm_2_pulse);
 			pwm_2_incremented = false;
 		}
 		else if (pwm_3_incremented) {
-			pwm_3_pulse += 10;
+			pwm_3_pulse += STEP_SIZE_MCS;
 			InitializePWMChannel_3(pwm_3_pulse);
 			pwm_3_incremented = false;
 		}
 		else if (pwm_4_incremented) {
-			pwm_4_pulse += 10;
+			pwm_4_pulse += STEP_SIZE_MCS;
 			InitializePWMChannel_4(pwm_4_pulse);
 			pwm_4_incremented = false;
 		}
+		else if (pwm_all_incremented) {
+			pwm_1_pulse += STEP_SIZE_MCS;
+			pwm_2_pulse += STEP_SIZE_MCS;
+			pwm_3_pulse += STEP_SIZE_MCS;
+			pwm_4_pulse += STEP_SIZE_MCS;
+			InitializePWMChannel_1(pwm_1_pulse);
+			InitializePWMChannel_2(pwm_2_pulse);
+			InitializePWMChannel_3(pwm_3_pulse);
+			InitializePWMChannel_4(pwm_4_pulse);
+			pwm_all_incremented = false;
+		}
 		else if (pwm_1_decremented) {
-			pwm_1_pulse -= 10;
+			pwm_1_pulse -= STEP_SIZE_MCS;
 			InitializePWMChannel_1(pwm_1_pulse);
 			pwm_1_decremented = false;
 		}
 		else if (pwm_2_decremented) {
-			pwm_2_pulse -= 10;
+			pwm_2_pulse -= STEP_SIZE_MCS;
 			InitializePWMChannel_2(pwm_2_pulse);
 			pwm_2_decremented = false;
 		}
 		else if (pwm_3_decremented) {
-			pwm_3_pulse -= 10;
+			pwm_3_pulse -= STEP_SIZE_MCS;
 			InitializePWMChannel_3(pwm_3_pulse);
 			pwm_3_decremented = false;
 		}
 		else if (pwm_4_decremented) {
-			pwm_4_pulse -= 10;
+			pwm_4_pulse -= STEP_SIZE_MCS;
 			InitializePWMChannel_4(pwm_4_pulse);
 			pwm_4_decremented = false;
+		}
+		else if (pwm_all_decremented) {
+			pwm_1_pulse -= STEP_SIZE_MCS;
+			pwm_2_pulse -= STEP_SIZE_MCS;
+			pwm_3_pulse -= STEP_SIZE_MCS;
+			pwm_4_pulse -= STEP_SIZE_MCS;
+			InitializePWMChannel_1(pwm_1_pulse);
+			InitializePWMChannel_2(pwm_2_pulse);
+			InitializePWMChannel_3(pwm_3_pulse);
+			InitializePWMChannel_4(pwm_4_pulse);
+			pwm_all_decremented = false;
 		}
 	}
 }
@@ -195,23 +339,23 @@ void vTaskLCD(void *pvParameters) {
 	received_byte = 0;
 	for (;;) {
 		lcd_write_dec_str_xxx_xx_angle(Cx,0,0,"Cx");           	/*  Pitch Angle by X */
-		lcd_write_dec_str_xxx_xx_angle(ACCEL_XANGLE,0,5,"Ax"); 	/*  Pitch Angle by X */
+		//lcd_write_dec_str_xxx_xx_angle(ACCEL_XANGLE,0,5,"Ax"); 	/*  Pitch Angle by X */
 
 		lcd_write_dec_str_xxx_xx_angle(Cy,1,0,"Cy");           	/*  Yaw Angle by Y */
-		lcd_write_dec_str_xxx_xx_angle(ACCEL_YANGLE,1,5,"Ay"); 	/*  Yaw Angle by Y */
+		//lcd_write_dec_str_xxx_xx_angle(ACCEL_YANGLE,1,5,"Ay"); 	/*  Yaw Angle by Y */
 
 		/* Temperature */
-		lcd_write_dec_str_xxx_xx_angle(Temp,1,11,"tC");
-#if 0
+		//lcd_write_dec_str_xxx_xx_angle(Temp,1,11,"tC");
 		/* PWM */
-		lcd_set_cursor(0,0);
+		lcd_set_cursor(0,6);
 		lcd_write_dec_xxxx(pwm_1_pulse);
-		lcd_set_cursor(0,5);
+		lcd_set_cursor(0,11);
 		lcd_write_dec_xxxx(pwm_2_pulse);
-		lcd_set_cursor(1,0);
+		lcd_set_cursor(1,6);
 		lcd_write_dec_xxxx(pwm_3_pulse);
-		lcd_set_cursor(1,5);
+		lcd_set_cursor(1,11);
 		lcd_write_dec_xxxx(pwm_4_pulse);
+#if 0
 		/* Received data from nRF24l01 */
 		if (received_byte <= 0x0F) {
 			lcd_set_cursor(0,11);
@@ -313,6 +457,15 @@ void vTask_nRF24L01 (void* pdata){
 					case 0x0B:
 						pwm_4_decremented = true;
 						break;
+
+					case 0x0E:
+						pwm_all_incremented = true;
+						break;
+
+					case 0x0F:
+						pwm_all_decremented = true;
+						break;
+
 					default:
 						break;
 				}
@@ -330,13 +483,25 @@ void vTask_nRF24L01 (void* pdata){
 /*********************************************************************************/
 int main(void)
 {
+		/* Initialising GPIOs for LEDs */
+    	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+
+    	GPIO_InitTypeDef gpioStructure;
+    	gpioStructure.GPIO_Pin = GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+    	gpioStructure.GPIO_Mode = GPIO_Mode_OUT;
+    	gpioStructure.GPIO_Speed = GPIO_Speed_50MHz;
+
+    	GPIO_Init(GPIOD, &gpioStructure);
+
 	    //xTaskCreate( vTaskLED1, "LED1", configMINIMAL_STACK_SIZE, (void *) NULL, 3, NULL);
+
+	 	xTaskCreate( vTaskReg, "Reg", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
 
 	    xTaskCreate( vTaskPWM, "PWM", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
 
 	    xTaskCreate( vTaskLCD, "LCD", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
 
-	    //xTaskCreate( vTaskMEMS, "MEMS", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
+	    xTaskCreate( vTaskMEMS, "MEMS", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
 
 	    xTaskCreate( vTask_nRF24L01, "nRF24L01", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
 

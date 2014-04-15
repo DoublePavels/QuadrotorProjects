@@ -9,7 +9,7 @@
 #include "main.h"
 
 void delay(unsigned long int s){
-	Delay_ms(s);
+	Delay_10_ms(s);
 }
 
 const uint8_t lcd_2x16_decode[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };

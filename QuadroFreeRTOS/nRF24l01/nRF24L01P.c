@@ -67,9 +67,6 @@ void RX_Mode(void)
 	//nRF24L01_CE_L();
 }
 
-
-
-
 void nRF24L01_TxPacket(unsigned char * tx_buf)
 {
 	SPI_Write_Buf(WRITE_nRF_REG + RX_ADDR_P0, TX_ADDRESS, ADR_WIDTH);
@@ -78,7 +75,7 @@ void nRF24L01_TxPacket(unsigned char * tx_buf)
 
 unsigned char nRF24L01_RxPacket(unsigned char* rx_buf)
 {
-	unsigned char flag=0;
+	unsigned char flag = 0;
 	unsigned char status;
     //if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_2)==0) {
 		status=SPI_RD_Reg(NRFRegSTATUS);
@@ -93,7 +90,7 @@ unsigned char nRF24L01_RxPacket(unsigned char* rx_buf)
 		SPI_WR_Reg(WRITE_nRF_REG+NRFRegSTATUS, 0x40); 		// Write 1 to clear bit
 		nRF24L01_Delay_10us(2);
 		nRF24L01_SPI_NSS_L();  
-		nRF24L01_SPI_Send_Byte(0xE2);						//Flush RX FIFO
+		nRF24L01_SPI_Send_Byte(0xE2);						// Flush RX FIFO
 		nRF24L01_SPI_NSS_H();  
 		nRF24L01_Delay_10us(2);
 		SPI_WR_Reg(WRITE_nRF_REG + CONFIG, 0x33); 			// enable power up and prx
@@ -139,7 +136,7 @@ unsigned char SPI_Read_Buf(unsigned char reg, unsigned char *pBuf, unsigned char
 	nRF24L01_Delay_10us(2);
 	status = nRF24L01_SPI_Send_Byte(reg);  // Select register to write to and read status unsigned char
 
-  for(i=0;i<Len;i++)
+  for(i=0; i < Len; i++)
   {
      pBuf[i] = nRF24L01_SPI_Send_Byte(0);
   }
@@ -272,13 +269,5 @@ void nRF24L01_HW_Init(void)
 
 void nRF24L01_Delay_10us(unsigned long n)
 {
-	Delay_ms(1);
-	/*
-	unsigned long i;
-	while(n--)  // delay n us
-	{
- 	   i=100;   
- 	   while(i--); // delay 1 us
-  	}
-  	*/
+	Delay_10_ms(1);
 }

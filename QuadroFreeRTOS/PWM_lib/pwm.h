@@ -5,7 +5,7 @@
 
 
 void InitializeTimer();
-void InitializeLEDs();
+void InitializeGPIOs();
 void InitializePWMChannel_1(uint16_t pulse);
 void InitializePWMChannel_2(uint16_t pulse);
 void InitializePWMChannel_3(uint16_t pulse);

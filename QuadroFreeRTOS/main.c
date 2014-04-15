@@ -56,7 +56,6 @@ volatile double Cy = 0.0;      		/* Angle Y */
 /*********************************************************************************/
 /*-------------------------------nRF24l01-VARIABLES------------------------------*/
 /*********************************************************************************/
-unsigned char ADD[3] = {0};
 unsigned char rx_buff[1];
 volatile char received_byte;
 
@@ -73,19 +72,21 @@ volatile bool 		pwm_2_decremented = false;
 volatile bool 		pwm_3_decremented = false;
 volatile bool 		pwm_4_decremented = false;
 
-volatile uint16_t 	pwm_1_pulse = 120;
-volatile uint16_t 	pwm_2_pulse = 120;
-volatile uint16_t 	pwm_3_pulse = 120;
-volatile uint16_t 	pwm_4_pulse = 120;
+volatile uint16_t 	pwm_1_pulse = 1250;
+volatile uint16_t 	pwm_2_pulse = 1250;
+volatile uint16_t 	pwm_3_pulse = 1200;
+volatile uint16_t 	pwm_4_pulse = 1250;
+
+#define	START_PULSE_VALUE	1400
 
 /*********************************************************************************/
 /*--------------------------------------FUNCTIONS--------------------------------*/
 /*********************************************************************************/
-void Delay_ms(uint16_t milisec)
+void Delay_10_ms(uint16_t milisec)
 {
 	 portTickType xLastWakeTime;
 	 const portTickType xFrequency = portTICK_PERIOD_MS * milisec;
-	  /* Initialise the xLastWakeTime variable with the current time. */
+	  /* Initialize the xLastWakeTime variable with the current time. */
 	 xLastWakeTime = xTaskGetTickCount ();
 	 vTaskDelayUntil( &xLastWakeTime, xFrequency );
 }
@@ -94,55 +95,94 @@ void Delay_ms(uint16_t milisec)
 /*----------------------------------------TASKS----------------------------------*/
 /*********************************************************************************/
 void vTaskLED1(void *pvParameters) {
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+
+    GPIO_InitTypeDef gpioStructure;
+    gpioStructure.GPIO_Pin = GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+    gpioStructure.GPIO_Mode = GPIO_Mode_OUT;
+    gpioStructure.GPIO_Speed = GPIO_Speed_50MHz;
+
+    GPIO_Init(GPIOD, &gpioStructure);
 	for (;;) {
+		GPIO_SetBits(GPIOD, GPIO_Pin_15);
+		Delay_10_ms(10);
+		GPIO_ResetBits(GPIOD, GPIO_Pin_15);
+		Delay_10_ms(10);
 	}
 }
 
 void vTaskPWM(void *pvParameters) {
-	InitializeLEDs();
+	InitializeGPIOs();
 	InitializeTimer();
+#if 0
+	InitializePWMChannel_1(pwm_1_pulse);
+	InitializePWMChannel_2(pwm_2_pulse);
+	InitializePWMChannel_3(pwm_3_pulse);
+	InitializePWMChannel_4(pwm_4_pulse);
+	for(;;) {
+		pwm_1_pulse += 10;
+		InitializePWMChannel_1(pwm_1_pulse);
+		pwm_2_pulse += 10;
+		InitializePWMChannel_2(pwm_2_pulse);
+		pwm_3_pulse += 10;
+		InitializePWMChannel_3(pwm_3_pulse);
+		pwm_4_pulse += 10;
+		InitializePWMChannel_4(pwm_4_pulse);
+		Delay_10_ms(100);
+	}
+
+	/* Start drives */
+	InitializePWMChannel_1(START_PULSE_VALUE);
+	InitializePWMChannel_2(START_PULSE_VALUE);
+	InitializePWMChannel_3(START_PULSE_VALUE);
+	InitializePWMChannel_4(START_PULSE_VALUE);
+
+	/* Delay 4s for starting all drives - hysteresis */
+	Delay_10_ms(400);
+#endif
+	/* Set PWM-pulse for the less rotation speed */
 	InitializePWMChannel_1(pwm_1_pulse);
 	InitializePWMChannel_2(pwm_2_pulse);
 	InitializePWMChannel_3(pwm_3_pulse);
 	InitializePWMChannel_4(pwm_4_pulse);
 	for (;;) {
 		if (pwm_1_incremented) {
-			pwm_1_pulse += 1;
+			pwm_1_pulse += 10;
 			InitializePWMChannel_1(pwm_1_pulse);
 			pwm_1_incremented = false;
 		}
 		/* else */ if (pwm_2_incremented) {
-			pwm_2_pulse += 1;
+			pwm_2_pulse += 10;
 			InitializePWMChannel_2(pwm_2_pulse);
 			pwm_2_incremented = false;
 		}
 		else if (pwm_3_incremented) {
-			pwm_3_pulse += 1;
+			pwm_3_pulse += 10;
 			InitializePWMChannel_3(pwm_3_pulse);
 			pwm_3_incremented = false;
 		}
 		else if (pwm_4_incremented) {
-			pwm_4_pulse += 1;
+			pwm_4_pulse += 10;
 			InitializePWMChannel_4(pwm_4_pulse);
 			pwm_4_incremented = false;
 		}
 		else if (pwm_1_decremented) {
-			pwm_1_pulse -= 1;
+			pwm_1_pulse -= 10;
 			InitializePWMChannel_1(pwm_1_pulse);
 			pwm_1_decremented = false;
 		}
 		else if (pwm_2_decremented) {
-			pwm_2_pulse -= 1;
+			pwm_2_pulse -= 10;
 			InitializePWMChannel_2(pwm_2_pulse);
 			pwm_2_decremented = false;
 		}
 		else if (pwm_3_decremented) {
-			pwm_3_pulse -= 1;
+			pwm_3_pulse -= 10;
 			InitializePWMChannel_3(pwm_3_pulse);
 			pwm_3_decremented = false;
 		}
 		else if (pwm_4_decremented) {
-			pwm_4_pulse -= 1;
+			pwm_4_pulse -= 10;
 			InitializePWMChannel_4(pwm_4_pulse);
 			pwm_4_decremented = false;
 		}
@@ -154,24 +194,24 @@ void vTaskLCD(void *pvParameters) {
 
 	received_byte = 0;
 	for (;;) {
-		//lcd_write_dec_str_xxx_xx_angle(Cx,0,0,"Cx");           	/*  Pitch Angle by X */
-		//lcd_write_dec_str_xxx_xx_angle(ACCEL_XANGLE,0,5,"Ax"); 	/*  Pitch Angle by X */
+		lcd_write_dec_str_xxx_xx_angle(Cx,0,0,"Cx");           	/*  Pitch Angle by X */
+		lcd_write_dec_str_xxx_xx_angle(ACCEL_XANGLE,0,5,"Ax"); 	/*  Pitch Angle by X */
 
-		//lcd_write_dec_str_xxx_xx_angle(Cy,1,0,"Cy");           	/*  Yaw Angle by Y */
-		//lcd_write_dec_str_xxx_xx_angle(ACCEL_YANGLE,1,5,"Ay"); 	/*  Yaw Angle by Y */
+		lcd_write_dec_str_xxx_xx_angle(Cy,1,0,"Cy");           	/*  Yaw Angle by Y */
+		lcd_write_dec_str_xxx_xx_angle(ACCEL_YANGLE,1,5,"Ay"); 	/*  Yaw Angle by Y */
 
 		/* Temperature */
-		//lcd_write_dec_str_xxx_xx_angle(Temp,1,11,"tC");
-
+		lcd_write_dec_str_xxx_xx_angle(Temp,1,11,"tC");
+#if 0
 		/* PWM */
 		lcd_set_cursor(0,0);
-		lcd_write_dec_xxx(pwm_1_pulse);
-		lcd_set_cursor(0,4);
-		lcd_write_dec_xxx(pwm_2_pulse);
+		lcd_write_dec_xxxx(pwm_1_pulse);
+		lcd_set_cursor(0,5);
+		lcd_write_dec_xxxx(pwm_2_pulse);
 		lcd_set_cursor(1,0);
-		lcd_write_dec_xxx(pwm_3_pulse);
-		lcd_set_cursor(1,4);
-		lcd_write_dec_xxx(pwm_4_pulse);
+		lcd_write_dec_xxxx(pwm_3_pulse);
+		lcd_set_cursor(1,5);
+		lcd_write_dec_xxxx(pwm_4_pulse);
 		/* Received data from nRF24l01 */
 		if (received_byte <= 0x0F) {
 			lcd_set_cursor(0,11);
@@ -184,6 +224,7 @@ void vTaskLCD(void *pvParameters) {
 			lcd_write_str("RCV:__");
 			lcd_set_cursor(0,14);
 		}
+#endif
 	}
 }
 
@@ -228,7 +269,7 @@ void vTaskMEMS(void *pvParameters) {
 		Gx_Prev = Gx_Cur;
 		Gy_Prev = Gy_Cur;
 
-		Delay_ms(1);
+		Delay_10_ms(1);
   }
 }
 
@@ -289,7 +330,7 @@ void vTask_nRF24L01 (void* pdata){
 /*********************************************************************************/
 int main(void)
 {
-	    //xTaskCreate( vTaskLED1, "LED1", configMINIMAL_STACK_SIZE, (void *) NULL, 1, NULL);
+	    //xTaskCreate( vTaskLED1, "LED1", configMINIMAL_STACK_SIZE, (void *) NULL, 3, NULL);
 
 	    xTaskCreate( vTaskPWM, "PWM", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
 
@@ -297,19 +338,11 @@ int main(void)
 
 	    //xTaskCreate( vTaskMEMS, "MEMS", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
 
-	    xTaskCreate( vTask_nRF24L01, "nRF24L01", configMINIMAL_STACK_SIZE, (void *) NULL, 4, NULL);
+	    xTaskCreate( vTask_nRF24L01, "nRF24L01", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
 
 	    vTaskStartScheduler();
 
 	    while(1);
-#if 0
-	    InitializeLEDs();
-	    InitializeTimer();
-	    InitializePWMChannel_1(pwm_1_pulse);
-	    InitializePWMChannel_2(pwm_2_pulse);
-	    InitializePWMChannel_3(pwm_3_pulse);
-	    InitializePWMChannel_4(pwm_4_pulse);
-#endif
 }
 
 /*********************************************************************************/

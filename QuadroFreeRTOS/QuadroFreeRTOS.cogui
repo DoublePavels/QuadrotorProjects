@@ -4,8 +4,8 @@
 <window>
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="org.eclipse.debug.ui.ExpressionView"/>
-<orientation position="512" view="org.coocox.builder.ui.views.ProjectView"/>
 <orientation position="512" view="org.coocox.component.ui.ComponentView"/>
+<orientation position="512" view="org.coocox.builder.ui.views.ProjectView"/>
 <orientation position="512" view="org.coocox.codebugger.trace.ui.traceview"/>
 <orientation position="512" view="org.eclipse.debug.ui.VariableView"/>
 </fastViewData>
@@ -23,57 +23,42 @@
 <part id="4"/>
 <part id="5"/>
 <part id="6"/>
-<part id="7"/>
-<part id="8"/>
-<part id="9"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/main.c" title="main.c" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/main.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/QuadroFreeRTOS/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2667" selectionTopPixel="732"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" partName="main.h" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/main.h" title="main.h" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/main.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/QuadroFreeRTOS/main.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="32" selectionTopPixel="0"/>
-</editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="pwm.c" partName="pwm.c" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/PWM_lib/pwm.c" title="pwm.c" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/PWM_lib/pwm.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/QuadroFreeRTOS/PWM_lib/pwm.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="367" selectionTopPixel="838"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="305" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="pwm.h" partName="pwm.h" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/PWM_lib/pwm.h" title="pwm.h" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/PWM_lib/pwm.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/QuadroFreeRTOS/PWM_lib/pwm.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="326" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="15" selectionOffset="143" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="nRF24L01P.c" partName="nRF24L01P.c" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/nRF24l01/nRF24L01P.c" title="nRF24L01P.c" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/nRF24l01/nRF24L01P.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/QuadroFreeRTOS/nRF24L01/nRF24L01P.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="154" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="8855" selectionTopPixel="3907"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="CompFilter.h" partName="CompFilter.h" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/CompFilter/CompFilter.h" title="CompFilter.h" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/CompFilter/CompFilter.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/QuadroFreeRTOS/CompFilter/CompFilter.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="141" selectionTopPixel="0"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="nRF24L01P.h" partName="nRF24L01P.h" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/nRF24l01/nRF24L01P.h" title="nRF24L01P.h" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/nRF24l01/nRF24L01P.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/QuadroFreeRTOS/nRF24L01/nRF24L01P.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1295" selectionTopPixel="796"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="CompFilter.c" partName="CompFilter.c" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/CompFilter/CompFilter.c" title="CompFilter.c" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/CompFilter/CompFilter.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/QuadroFreeRTOS/CompFilter/CompFilter.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="353" selectionTopPixel="0"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" partName="main.h" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/main.h" title="main.h" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/main.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/QuadroFreeRTOS/main.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="5" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="HAL_MPU6050.h" partName="HAL_MPU6050.h" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/MPU6050_Lib/HAL_MPU6050.h" title="HAL_MPU6050.h" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/MPU6050_Lib/HAL_MPU6050.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/QuadroFreeRTOS/MPU_6050_lib/HAL_MPU6050.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2222" selectionTopPixel="358"/>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/main.c" title="main.c" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/main.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/QuadroFreeRTOS/main.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7099" selectionTopPixel="3582"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="MPU6050.c" partName="MPU6050.c" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/MPU6050_Lib/MPU6050.c" title="MPU6050.c" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/MPU6050_Lib/MPU6050.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/QuadroFreeRTOS/MPU_6050_lib/MPU6050.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="13123" selectionTopPixel="4560"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="lcd.h" partName="lcd.h" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/LCD_Lib/lcd.h" title="lcd.h" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/LCD_Lib/lcd.h" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="lcd.h" partName="lcd.h" path="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/LCD_Lib/lcd.h" title="lcd.h" tooltip="C:/CooCox/CoIDE/workspace/QuadroFreeRTOS/LCD_Lib/lcd.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/QuadroFreeRTOS/LCD_lib/lcd.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="225" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="343" selectionTopPixel="192"/>
 </editor>
 </editors>
 <views>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="21">
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="25">
 <expanded>
 <element path="/QuadroFreeRTOS"/>
 <element path="/QuadroFreeRTOS/cmsis"/>
@@ -144,8 +129,13 @@
 <view id="org.coocox.component.ui.ComponentView"/>
 <view id="org.coocox.builder.ui.views.ProjectView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
-<view id="org.coocox.component.ui.Help"/>
-<fastViewBars/>
+<fastViewBars>
+<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@1833160" orientation="512" selectedTabId="org.coocox.component.ui.Help" style="0">
+<fastViews>
+<view id="org.coocox.component.ui.Help" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
 <layout>
 <mainWindow>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1295c59">
@@ -170,22 +160,20 @@
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@140ee08" ratio="0.21611002" ratioLeft="330" ratioRight="1197" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1295c59">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@140ee08" ratio="0.23389831" ratioLeft="276" ratioRight="904" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1295c59">
 <folder appearance="2" expanded="2">
 <page content="org.coocox.builder.ui.exampleView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1833160" ratio="0.7195226" ratioLeft="844" ratioRight="329" relationship="2" relative="org.eclipse.ui.internal.ViewStack@140ee08">
-<folder activePageID="org.coocox.component.ui.Help" appearance="2" expanded="2">
-<page content="org.coocox.component.ui.Help" label="Help"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1833160" ratio="0.8626156" ratioLeft="1306" ratioRight="208" relationship="2" relative="org.eclipse.ui.internal.ViewStack@140ee08">
+<folder appearance="2" expanded="0">
+<page content="org.coocox.component.ui.Help" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <page content="org.coocox.coassistant.view.CoAssistantView" label="LabelNotFound"/>
 <page content="org.coocox.builder.ui.MoreExampleView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.4488778" ratioLeft="360" ratioRight="442" relationship="4" relative="org.eclipse.ui.internal.ViewStack@140ee08"/>
@@ -295,165 +283,166 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/CompFilter/CompFilter.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/PWM_lib/pwm.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/PWM_lib/pwm.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/MPU_6050_lib/HAL_MPU6050.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/MPU_6050_lib/mpu6050.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/MPU_6050_lib/MPU6050.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/cmsis_lib/include/stm32f4xx_gpio.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/LCD_lib/lcd.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/main.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/PWM_lib/pwm.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/PWM_lib/pwm.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/nRF24L01/nRF24L01P.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/nRF24L01/nRF24L01P.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/QuadroFreeRTOS/MPU_6050_lib/MPU6050.c"/>
 </editors>
-<item historyLabel="pwm.c" index="1">
-<position info="not_deleted" x="3029" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="8518" y="0"/>
-</item>
-<item historyLabel="CompFilter.c" index="0">
-<position info="not_deleted" x="353" y="0"/>
-</item>
-<item historyLabel="pwm.h" index="3">
-<position info="not_deleted" x="326" y="0"/>
-</item>
-<item historyLabel="pwm.c" index="1">
-<position info="not_deleted" x="3029" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="8518" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="8356" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="3546" y="8"/>
-</item>
-<item historyLabel="pwm.c" index="1">
-<position info="not_deleted" x="3029" y="0"/>
-</item>
-<item historyLabel="HAL_MPU6050.h" index="4">
-<position info="not_deleted" x="1060" y="0"/>
-</item>
-<item historyLabel="pwm.c" index="1">
-<position info="not_deleted" x="3029" y="0"/>
-</item>
-<item historyLabel="HAL_MPU6050.h" index="4">
-<position info="not_deleted" x="2222" y="0"/>
-</item>
-<item historyLabel="pwm.c" index="1">
-<position info="not_deleted" x="3029" y="0"/>
-</item>
-<item historyLabel="HAL_MPU6050.h" index="4">
-<position info="not_deleted" x="2222" y="0"/>
-</item>
-<item historyLabel="mpu6050.h" index="5">
-<position info="not_deleted" x="1081" y="0"/>
-</item>
-<item historyLabel="HAL_MPU6050.h" index="4">
-<position info="not_deleted" x="2222" y="0"/>
-</item>
-<item historyLabel="MPU6050.c" index="6">
-<position info="not_deleted" x="11862" y="0"/>
-</item>
-<item historyLabel="HAL_MPU6050.h" index="4">
-<position info="not_deleted" x="2222" y="0"/>
-</item>
-<item historyLabel="MPU6050.c" index="6">
-<position/>
-</item>
-<item historyLabel="stm32f4xx_gpio.h" index="7">
-<position info="not_deleted" x="11418" y="12"/>
-</item>
-<item historyLabel="MPU6050.c" index="6">
-<position info="not_deleted" x="13123" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="3546" y="8"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="5604" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="5599" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="2650" y="11"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="8356" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="3546" y="8"/>
-</item>
-<item historyLabel="pwm.c" index="1">
-<position info="not_deleted" x="3029" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="8731" y="0"/>
-</item>
-<item historyLabel="pwm.c" index="1">
-<position/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="2512" y="0"/>
-</item>
-<item historyLabel="pwm.c" index="1">
-<position/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="2667" y="0"/>
-</item>
-<item historyLabel="pwm.c" index="1">
-<position info="not_deleted" x="2921" y="0"/>
-</item>
-<item historyLabel="pwm.c" index="1">
-<position info="not_deleted" x="593" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="3632" y="0"/>
-</item>
-<item historyLabel="pwm.c" index="1">
-<position info="not_deleted" x="694" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="3716" y="0"/>
-</item>
-<item historyLabel="pwm.c" index="1">
-<position info="not_deleted" x="1618" y="22"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="3716" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="9247" y="0"/>
-</item>
-<item historyLabel="pwm.c" index="1">
-<position info="not_deleted" x="1618" y="22"/>
-</item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="8969" y="0"/>
 </item>
-<item historyLabel="pwm.c" index="1">
-<position info="not_deleted" x="1618" y="22"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="8969" y="0"/>
-</item>
-<item historyLabel="pwm.c" index="1">
+<item historyLabel="pwm.c" index="0">
 <position info="not_deleted" x="2991" y="0"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="3676" y="0"/>
 </item>
-<item historyLabel="pwm.c" index="1">
+<item historyLabel="pwm.c" index="0">
 <position info="not_deleted" x="367" y="0"/>
 </item>
-<item historyLabel="main.c" index="2">
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="3676" y="0"/>
 </item>
-<item active="true" historyLabel="lcd.h" index="8">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="lcd.h" index="2">
+<position info="not_deleted" x="225" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="2642" y="0"/>
+</item>
+<item historyLabel="main.h" index="4">
+<position info="not_deleted" x="32" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="9541" y="0"/>
+</item>
+<item historyLabel="pwm.c" index="5">
+<position info="not_deleted" x="307" y="0"/>
+</item>
+<item historyLabel="pwm.h" index="6">
+<position info="not_deleted" x="143" y="15"/>
+</item>
+<item historyLabel="pwm.c" index="5">
+<position info="not_deleted" x="2360" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="3987" y="0"/>
+</item>
+<item historyLabel="pwm.h" index="6">
+<position info="not_deleted" x="143" y="15"/>
+</item>
+<item historyLabel="pwm.c" index="5">
+<position info="not_deleted" x="1268" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="2642" y="0"/>
+</item>
+<item historyLabel="pwm.c" index="5">
+<position info="not_deleted" x="307" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="2642" y="0"/>
+</item>
+<item historyLabel="nRF24L01P.c" index="7">
+<position info="not_deleted" x="154" y="0"/>
+</item>
+<item historyLabel="nRF24L01P.c" index="7">
+<position info="not_deleted" x="1608" y="0"/>
+</item>
+<item historyLabel="nRF24L01P.h" index="8">
+<position info="not_deleted" x="1295" y="0"/>
+</item>
+<item historyLabel="lcd.h" index="2">
+<position info="not_deleted" x="225" y="0"/>
+</item>
+<item historyLabel="nRF24L01P.h" index="8">
+<position info="not_deleted" x="1295" y="0"/>
+</item>
+<item historyLabel="MPU6050.c" index="9">
+<position info="not_deleted" x="13123" y="0"/>
+</item>
+<item historyLabel="nRF24L01P.h" index="8">
+<position info="not_deleted" x="1295" y="0"/>
+</item>
+<item historyLabel="nRF24L01P.c" index="7">
+<position info="not_deleted" x="1608" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="7862" y="11"/>
+</item>
+<item historyLabel="pwm.c" index="5">
+<position info="not_deleted" x="307" y="0"/>
+</item>
+<item historyLabel="main.h" index="4">
+<position info="not_deleted" x="5" y="11"/>
+</item>
+<item historyLabel="nRF24L01P.c" index="7">
+<position info="not_deleted" x="8855" y="11"/>
+</item>
+<item historyLabel="nRF24L01P.h" index="8">
+<position info="not_deleted" x="1295" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="3962" y="0"/>
+</item>
+<item historyLabel="pwm.c" index="5">
+<position info="not_deleted" x="2367" y="311"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="3962" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="9039" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="3901" y="20"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="9058" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="2675" y="0"/>
+</item>
+<item historyLabel="pwm.c" index="5">
+<position info="not_deleted" x="307" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="2677" y="0"/>
+</item>
+<item historyLabel="pwm.c" index="5">
+<position info="not_deleted" x="197" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="4180" y="0"/>
+</item>
+<item historyLabel="pwm.c" index="5">
+<position info="not_deleted" x="197" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="4625" y="0"/>
+</item>
+<item historyLabel="pwm.c" index="5">
+<position info="not_deleted" x="305" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="4625" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="4238" y="0"/>
+</item>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="2601" y="0"/>
+</item>
+<item historyLabel="lcd.h" index="2">
+<position info="not_deleted" x="343" y="0"/>
+</item>
+<item active="true" historyLabel="main.c" index="3">
+<position info="not_deleted" x="2601" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -465,47 +454,47 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="lcd.h" tooltip="QuadroFreeRTOS/LCD_lib/lcd.h">
 <persistable path="/QuadroFreeRTOS/LCD_lib/lcd.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_gpio.h" tooltip="QuadroFreeRTOS/cmsis_lib/include/stm32f4xx_gpio.h">
-<persistable path="/QuadroFreeRTOS/cmsis_lib/include/stm32f4xx_gpio.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="QuadroFreeRTOS/main.c">
+<persistable path="/QuadroFreeRTOS/main.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="MPU6050.c" tooltip="QuadroFreeRTOS/MPU_6050_lib/MPU6050.c">
-<persistable path="/QuadroFreeRTOS/MPU_6050_lib/MPU6050.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="mpu6050.h" tooltip="QuadroFreeRTOS/MPU_6050_lib/mpu6050.h">
-<persistable path="/QuadroFreeRTOS/MPU_6050_lib/mpu6050.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="HAL_MPU6050.h" tooltip="QuadroFreeRTOS/MPU_6050_lib/HAL_MPU6050.h">
-<persistable path="/QuadroFreeRTOS/MPU_6050_lib/HAL_MPU6050.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="QuadroFreeRTOS/main.h">
+<persistable path="/QuadroFreeRTOS/main.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="nRF24L01P.h" tooltip="QuadroFreeRTOS/nRF24L01/nRF24L01P.h">
 <persistable path="/QuadroFreeRTOS/nRF24L01/nRF24L01P.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="CompFilter.c" tooltip="QuadroFreeRTOS/CompFilter/CompFilter.c">
-<persistable path="/QuadroFreeRTOS/CompFilter/CompFilter.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="core.c" tooltip="CoOs_Usart_I2C_MPU6050_Final/STMF4CoOS/CoOS/kernel/core.c">
+<persistable path="/CoOs_Usart_I2C_MPU6050_Final/STMF4CoOS/CoOS/kernel/core.c"/>
 </file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="math.h" tooltip="C:\Program Files (x86)\GNU Tools ARM Embedded\4.7 2013q2\arm-none-eabi\include\math.h">
-<persistable path="C:\Program Files (x86)\GNU Tools ARM Embedded\4.7 2013q2\arm-none-eabi\include\math.h" project="QuadroFreeRTOS"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="lcd.h" tooltip="CoOs_Usart_I2C_MPU6050_Final/LCD_lib/lcd.h">
+<persistable path="/CoOs_Usart_I2C_MPU6050_Final/LCD_lib/lcd.h"/>
 </file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stdbool.h" tooltip="C:\Program Files (x86)\GNU Tools ARM Embedded\4.7 2013q2\lib\gcc\arm-none-eabi\4.7.4\include\stdbool.h">
-<persistable path="C:\Program Files (x86)\GNU Tools ARM Embedded\4.7 2013q2\lib\gcc\arm-none-eabi\4.7.4\include\stdbool.h" project="QuadroFreeRTOS"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="lcd.c" tooltip="CoOs_Usart_I2C_MPU6050_Final/LCD_lib/lcd.c">
+<persistable path="/CoOs_Usart_I2C_MPU6050_Final/LCD_lib/lcd.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_tim.h" tooltip="QuadroFreeRTOS/cmsis_lib/include/stm32f4xx_tim.h">
-<persistable path="/QuadroFreeRTOS/cmsis_lib/include/stm32f4xx_tim.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="CoOs_Usart_I2C_MPU6050_Final/STMF4CoOS/cmsis_boot/system_stm32f4xx.c">
+<persistable path="/CoOs_Usart_I2C_MPU6050_Final/STMF4CoOS/cmsis_boot/system_stm32f4xx.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="lcd.c" tooltip="QuadroFreeRTOS/LCD_lib/lcd.c">
-<persistable path="/QuadroFreeRTOS/LCD_lib/lcd.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="nRF24L01P.c" tooltip="CoOs_Usart_I2C_MPU6050_Final/nRF24l01_lib/nRF24L01P.c">
+<persistable path="/CoOs_Usart_I2C_MPU6050_Final/nRF24l01_lib/nRF24L01P.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="CompFilter.h" tooltip="QuadroFreeRTOS/CompFilter/CompFilter.h">
-<persistable path="/QuadroFreeRTOS/CompFilter/CompFilter.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_gpio.h" tooltip="CoOs_Usart_I2C_MPU6050_Final/cmsis_lib/include/stm32f4xx_gpio.h">
+<persistable path="/CoOs_Usart_I2C_MPU6050_Final/cmsis_lib/include/stm32f4xx_gpio.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="nRF24L01P.c" tooltip="QuadroFreeRTOS/nRF24L01/nRF24L01P.c">
-<persistable path="/QuadroFreeRTOS/nRF24L01/nRF24L01P.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_spi.h" tooltip="CoOs_Usart_I2C_MPU6050_Final/cmsis_lib/include/stm32f4xx_spi.h">
+<persistable path="/CoOs_Usart_I2C_MPU6050_Final/cmsis_lib/include/stm32f4xx_spi.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="QuadroFreeRTOS/cmsis_boot/stm32f4xx.h">
-<persistable path="/QuadroFreeRTOS/cmsis_boot/stm32f4xx.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="CoOs_Usart_I2C_MPU6050_Final/cmsis_boot/stm32f4xx.h">
+<persistable path="/CoOs_Usart_I2C_MPU6050_Final/cmsis_boot/stm32f4xx.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="pwm.h" tooltip="QuadroFreeRTOS/PWM_lib/pwm.h">
-<persistable path="/QuadroFreeRTOS/PWM_lib/pwm.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="OsTimer.h" tooltip="CoOs_Usart_I2C_MPU6050_Final/STMF4CoOS/CoOS/kernel/OsTimer.h">
+<persistable path="/CoOs_Usart_I2C_MPU6050_Final/STMF4CoOS/CoOS/kernel/OsTimer.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="OsTime.h" tooltip="CoOs_Usart_I2C_MPU6050_Final/STMF4CoOS/CoOS/kernel/OsTime.h">
+<persistable path="/CoOs_Usart_I2C_MPU6050_Final/STMF4CoOS/CoOS/kernel/OsTime.h"/>
+</file>
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stdio.h" tooltip="C:\Program Files\GNU Tools ARM Embedded\4.8 2013q4\arm-none-eabi\include\stdio.h">
+<persistable path="C:\Program Files\GNU Tools ARM Embedded\4.8 2013q4\arm-none-eabi\include\stdio.h" project="CoOs_Usart_I2C_MPU6050_Final"/>
 </file>
 </mruList>
 </workbench>

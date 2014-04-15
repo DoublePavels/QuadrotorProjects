@@ -272,57 +272,31 @@ void vTaskMEMS(void *pvParameters) {
 		Delay_10_ms(1);
   }
 }
+void initGPIO()
+{
+
+	GPIO_InitTypeDef GPIO_InitStructure;
+
+	      /* GPIOD Periph clock enable */
+	      RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+
+
+	      GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12 | GPIO_Pin_13| GPIO_Pin_14| GPIO_Pin_15;
+	      GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+	      GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+	      GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+	      GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	      GPIO_Init(GPIOD, &GPIO_InitStructure);
+}
 
 void vTask_nRF24L01 (void* pdata){
-	nRF24L01_HW_Init();
-  	RX_Mode();
-	for (;;) {
-		if(nRF24L01_RxPacket(rx_buff)) {
-			if (rx_buff[0] <= 0x0F) {
-				received_byte = rx_buff[0];
-				switch (rx_buff[0]) {
 
-					case 0x01:
-						pwm_1_incremented = true;
-						break;
-
-					case 0x02:
-						pwm_2_incremented = true;
-						break;
-
-					case 0x03:
-						pwm_3_incremented = true;
-						break;
-
-					case 0x0A:
-						pwm_4_incremented = true;
-						break;
-
-					case 0x04:
-						pwm_1_decremented = true;
-						break;
-
-					case 0x05:
-						pwm_2_decremented = true;
-						break;
-
-					case 0x06:
-						pwm_3_decremented = true;
-						break;
-
-					case 0x0B:
-						pwm_4_decremented = true;
-						break;
-					default:
-						break;
-				}
-			}
-			else {
-				received_byte = 0xFF;
-			}
-		(void)SPI_RD_Reg(0x17);
-	  }
-  }
+	while(1){
+		GPIO_SetBits(GPIOD,GPIO_Pin_15);
+		Delay_10_ms(10);
+		GPIO_ResetBits(GPIOD,GPIO_Pin_15);
+		Delay_10_ms(10);
+	}
 }
 
 /*********************************************************************************/
@@ -330,15 +304,18 @@ void vTask_nRF24L01 (void* pdata){
 /*********************************************************************************/
 int main(void)
 {
-	    //xTaskCreate( vTaskLED1, "LED1", configMINIMAL_STACK_SIZE, (void *) NULL, 3, NULL);
+	//initGPIO();
+	SystemInit();
 
-	    xTaskCreate( vTaskPWM, "PWM", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
+	    xTaskCreate( vTaskLED1, "LED1", configMINIMAL_STACK_SIZE, (void *) NULL, 1, NULL);
 
-	    xTaskCreate( vTaskLCD, "LCD", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
+	    //xTaskCreate( vTaskPWM, "PWM", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
+
+	   // xTaskCreate( vTaskLCD, "LCD", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
 
 	    //xTaskCreate( vTaskMEMS, "MEMS", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
 
-	    xTaskCreate( vTask_nRF24L01, "nRF24L01", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
+	    //xTaskCreate( vTask_nRF24L01, "nRF24L01", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
 
 	    vTaskStartScheduler();
 

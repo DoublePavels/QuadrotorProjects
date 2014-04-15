@@ -60,7 +60,8 @@ void Delay_ms(uint16_t milisec)
 }
 void vTask_Button (void* pdata){
   for (;;) {
-	  button = getButton();
+	  lcd_write_dec_str_xxx_xx_angle(8.9,0,0,"Tt");
+	  //button = getButton();
   }
 }
 
@@ -109,6 +110,7 @@ int main(void)
 {
 	SystemInit();
 	initGPIO();
+	lcd_init();
 
 	xTaskCreate(vTask_nRF24L01, "nRF24L01", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);
 	xTaskCreate(vTask_Button, "Button", configMINIMAL_STACK_SIZE, (void *) NULL, 2, NULL);

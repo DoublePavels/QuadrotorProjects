@@ -37,7 +37,7 @@
           <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
           <Memory name="IRAM2" type="ReadWrite" size="0x00010000" startValue="0x10000000"/>
         </MemoryAreas>
-        <LocateLinkFile path="../../../../../../coocox/coide/configuration/programdata/controlfreertos/arm-gcc-link.ld" type="0"/>
+        <LocateLinkFile path="c:/coocox/coide/configuration/programdata/controlfreertos/arm-gcc-link.ld" type="0"/>
       </Link>
       <Output>
         <Option name="OutputFileType" value="0"/>
@@ -94,12 +94,12 @@
     <File name="MPU6050" path="" type="2"/>
     <File name="FreeRTOS/inc/timers.h" path="FreeRTOS/include/timers.h" type="1"/>
     <File name="nRF24L01/nRF24L01P.h" path="nRF24l01/nRF24L01P.h" type="1"/>
+    <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
     <File name="FreeRTOS/inc/mpu_wrappers.h" path="FreeRTOS/include/mpu_wrappers.h" type="1"/>
     <File name="cmsis_boot/startup" path="" type="2"/>
     <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
-    <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_spi.c" path="cmsis_lib/source/stm32f4xx_spi.c" type="1"/>
     <File name="FreeRTOS/inc/portable.h" path="FreeRTOS/include/portable.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_spi.c" path="cmsis_lib/source/stm32f4xx_spi.c" type="1"/>
     <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
     <File name="cmsis/core_cm4.h" path="cmsis/core_cm4.h" type="1"/>
     <File name="LCD/lcd.c" path="LCD_Lib/lcd.c" type="1"/>
@@ -122,15 +122,15 @@
     <File name="FreeRTOS/inc/StackMacros.h" path="FreeRTOS/include/StackMacros.h" type="1"/>
     <File name="FreeRTOS/src/port.c" path="FreeRTOS/port.c" type="1"/>
     <File name="cmsis_boot/startup/startup_stm32f4xx.c" path="cmsis_boot/startup/startup_stm32f4xx.c" type="1"/>
-    <File name="CompFilter/CompFilter.c" path="CompFilter/CompFilter.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_rcc.c" path="cmsis_lib/source/stm32f4xx_rcc.c" type="1"/>
-    <File name="FreeRTOS/inc/list.h" path="FreeRTOS/include/list.h" type="1"/>
+    <File name="CompFilter/CompFilter.c" path="CompFilter/CompFilter.c" type="1"/>
     <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
+    <File name="FreeRTOS/inc/list.h" path="FreeRTOS/include/list.h" type="1"/>
     <File name="FreeRTOS/src/tasks.c" path="FreeRTOS/tasks.c" type="1"/>
     <File name="FreeRTOS/inc/FreeRTOSConfig.h" path="FreeRTOS/include/FreeRTOSConfig.h" type="1"/>
     <File name="FreeRTOS/inc/queue.h" path="FreeRTOS/include/queue.h" type="1"/>
-    <File name="FreeRTOS/inc/FreeRTOS.h" path="FreeRTOS/include/FreeRTOS.h" type="1"/>
     <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
+    <File name="FreeRTOS/inc/FreeRTOS.h" path="FreeRTOS/include/FreeRTOS.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_spi.h" path="cmsis_lib/include/stm32f4xx_spi.h" type="1"/>
     <File name="FreeRTOS/src/croutine.c" path="FreeRTOS/croutine.c" type="1"/>
     <File name="MPU6050/MPU6050.c" path="MPU6050_Lib/MPU6050.c" type="1"/>
@@ -141,8 +141,8 @@
     <File name="cmsis_lib" path="" type="2"/>
     <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
-    <File name="FreeRTOS/src/heap_4.c" path="FreeRTOS/heap_4.c" type="1"/>
     <File name="CompFilter/CompFilter.h" path="CompFilter/CompFilter.h" type="1"/>
+    <File name="FreeRTOS/src/heap_4.c" path="FreeRTOS/heap_4.c" type="1"/>
     <File name="cmsis_lib/include" path="" type="2"/>
     <File name="MPU6050/HAL_MPU6050.h" path="MPU6050_Lib/HAL_MPU6050.h" type="1"/>
     <File name="FreeRTOS/inc/projdefs.h" path="FreeRTOS/include/projdefs.h" type="1"/>
